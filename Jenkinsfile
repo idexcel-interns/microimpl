@@ -3,7 +3,7 @@ stage('pulling code from git'){
 checkout scm
 }
 stage('Maven Build'){
-sh 'mvn'
+sh 'mvn build'
 }
 stage('Build Image'){
 sh 'sudo docker build -t accountservice:${BUILD_NUMBER} .'
