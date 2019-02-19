@@ -3,7 +3,7 @@ stage('pulling code from git'){
 checkout scm
 }
 stage('Maven Build'){
-sh 'mvn install'
+sh '/opt/apache-maven-3.6.0/bin/mvn install'
 }
 stage('Build Image'){
 sh 'sudo docker build -t accountservice:${BUILD_NUMBER} .'
